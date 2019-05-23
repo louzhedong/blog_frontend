@@ -1,0 +1,24 @@
+.header {
+  padding: 15px 0;
+  width: 100%;
+  border: 1px solid #dadada;
+  .width-limit {
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+      z-index: 1;
+    }
+    min-width: 768px;
+    max-width: 1440px;
+    margin: 0 auto;
+    .wrap-right {
+      float: right;
+      .login-btn,
+      .reg-btn,
+      .write-btn {
+        margin-right: 10px;
+      }
+    }
+  }
+}
