@@ -2,12 +2,13 @@
  * @Author: Michael 
  * @Date: 2019-05-23 11:47:26 
  * @Last Modified by: Michael
- * @Last Modified time: 2019-05-31 17:13:41
+ * @Last Modified time: 2019-06-04 10:25:41
  */
 
 import React, { Component } from 'react';
 import { Button, Icon, Menu, Dropdown } from 'antd';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import LoginModal from '../LoginModal/LoginModal';
 import { addToken, addUid, addNickname } from '../../store/action';
 import fetch from '../../core/fetch';
@@ -47,6 +48,8 @@ const pullDownMenu = (
   </Menu>
 );
 
+@withRouter
+@connect(mapStateToProps, mapDispatchToProps)
 class Header extends Component {
   constructor() {
     super();
@@ -107,6 +110,11 @@ class Header extends Component {
 
   }
 
+  // 写文章
+  handleToAddArticle = () => {
+    this.props.history.push('/add_article');
+  }
+
   render() {
     const { showLoginModal, showRegModal } = this.state;
     const { token, nickName } = this.props;
@@ -119,7 +127,7 @@ class Header extends Component {
             {token && <Dropdown overlay={pullDownMenu}>
               <span className="nick-name">{nickName}</span>
             </Dropdown>}
-            <Button type="dashed" className="write-btn" shape="round" size="small"><Icon type="edit" />写文章</Button>
+            <Button type="dashed" className="write-btn" shape="round" size="small" onClick={this.handleToAddArticle}><Icon type="edit" />写文章</Button>
           </div>
         </div>
         <LoginModal visible={showLoginModal} hide={this.handleHideLoginModal}></LoginModal>
@@ -129,4 +137,4 @@ class Header extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default Header

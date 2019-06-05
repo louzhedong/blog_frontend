@@ -1,0 +1,25 @@
+/*
+ * @Author: Michael 
+ * @Date: 2019-06-04 13:49:21 
+ * @Last Modified by: Michael
+ * @Last Modified time: 2019-06-04 16:33:44
+ */
+.add-article {
+  padding-top: 60px;
+  .ant-tabs-bar {
+    margin: 0;
+  }
+  .write-textarea {
+    resize: none;
+    border-top: none;
+    border-radius: 0;
+  }
+  .article-detail {
+    padding: 20px 10px;
+    border: 1px solid #d9d9d9;
+    border-top: none;
+  }
+  .save-btn {
+    float: right;
+  }
+}

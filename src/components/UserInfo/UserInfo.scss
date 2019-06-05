@@ -2,7 +2,7 @@
  * @Author: Michael 
  * @Date: 2019-06-03 14:40:17 
  * @Last Modified by: Michael
- * @Last Modified time: 2019-06-03 17:10:43
+ * @Last Modified time: 2019-06-04 13:48:53
  */
 
 .user-info {
@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 40px;
   .user-avatar {
     width: 200px;
     height: 200px;

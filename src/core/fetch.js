@@ -2,7 +2,7 @@
  * @Author: Michael
  * @Date: 2019-05-24 16:03:07
  * @Last Modified by: Michael
- * @Last Modified time: 2019-05-30 18:14:54
+ * @Last Modified time: 2019-06-04 17:28:40
  */
 
 import CONFIG from './config';
@@ -68,6 +68,10 @@ class Fetch {
       instance.interceptors.response.use(response => {
         if (response.data.resultCode !== 0) {
           message.error(response.data.resultMsg);
+          if (response.data.resultCode === 4) {
+            localStorage.removeItem("token");
+            localStorage.removeItem("uid");
+          }
           return Promise.reject(response.data);
         }
         return response;

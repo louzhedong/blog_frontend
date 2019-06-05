@@ -2,9 +2,11 @@
   padding: 15px 0;
   width: 100%;
   border: 1px solid #dadada;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
+  background: #fff;
+  z-index: 11;
   .width-limit {
     &::after {
       display: block;
